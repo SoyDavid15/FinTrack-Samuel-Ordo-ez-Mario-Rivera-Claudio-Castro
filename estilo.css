@@ -1,0 +1,65 @@
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #eef2f5;
+    margin: 0;
+    padding: 30px;
+}
+
+.encabezado {
+    background: #34495e;
+    color: #ffffff;
+    padding: 20px;
+    text-align: center;
+    border-radius: 8px;
+    margin-bottom: 25px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.texto-header {
+    margin: 8px 0;
+    font-size: 16px;
+}
+
+.seccion-principal {
+    background: #ffffff;
+    padding: 25px;
+    border-radius: 8px;
+    max-width: 750px;
+    margin: 0 auto;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.titulo-resumen {
+    text-align: center;
+    color: #2c3e50;
+    margin-top: 0;
+    margin-bottom: 20px;
+}
+
+.caja-principal {
+    display: flex;
+    justify-content: space-between;
+    gap: 15px;
+}
+
+.tarjeta-ingresos, .tarjeta-gastos, .tarjeta-saldo {
+    background: #f9f9f9;
+    border: 1px solid #dcdcdc;
+    padding: 15px;
+    border-radius: 6px;
+    flex: 1;
+    text-align: center;
+}
+
+.tarjeta-ingresos h3, .tarjeta-gastos h3, .tarjeta-saldo h3 {
+    margin-top: 0;
+    color: #555;
+    font-size: 18px;
+}
+
+.valor {
+    font-size: 22px;
+    font-weight: bold;
+    color: #27ae60;
+    margin-bottom: 0;
+}
