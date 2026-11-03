@@ -1,50 +1,37 @@
 const http = require('http');
+ 
+const d = [4.5, 3.5, 2.5, 4.0];
 
-const NOTA_MINIMA_APROBATORIA = 3.0;
-const calificacionesEstudiante = [4.5, 3.5, 2.5, 4.0];
-
-function calcularPromedioNotas(calificaciones) {
-  let suma = 0;
-  for (let i = 0; i < calificaciones.length; i++) {
-    suma += calificaciones[i];
-  }
-  return suma / calificaciones.length;
+// Corrección Señal 2: Se extrae la lógica del cálculo a su propia función
+function calcularPromedio(notas) {
+  return notas.reduce((suma, n) => suma + n, 0) / notas.length;
 }
-
-function verificarAprobacion(promedio, notaMinima) {
-  return promedio >= notaMinima;
-}
-
-const servidor = http.createServer((req, res) => {
+ 
+const s = http.createServer((req, res) => {
+ 
   if (req.url === '/salud') {
     res.writeHead(200, { 'Content-Type': 'application/json; charset=utf-8' });
     res.end(JSON.stringify({ estado: 'ok' }));
     return;
   }
-
+ 
   if (req.url === '/equipo') {
     res.writeHead(200, { 'Content-Type': 'application/json; charset=utf-8' });
-    res.end(JSON.stringify({
-      equipo: 'Equipo 01',
-      integrantes: ['Samuel Ordoñez', 'Mario Rivera', 'Claudio Castro']
-    }));
+    res.end(JSON.stringify({ equipo: 'Equipo 01',
+                             integrantes: ['Samuel Ordoñez', 'Mario Rivera', 'Claudio Castro'] }));
     return;
   }
-
+ 
   if (req.url === '/notas') {
-    const promedioCalculado = calcularPromedioNotas(calificacionesEstudiante);
-    const estaAprobado = verificarAprobacion(promedioCalculado, NOTA_MINIMA_APROBATORIA);
-
+    // Corrección Señal 2: La presentación ya no calcula, solo llama a la lógica
+    let p = calcularPromedio(d); 
     res.writeHead(200, { 'Content-Type': 'application/json; charset=utf-8' });
-    res.end(JSON.stringify({
-      promedio: promedioCalculado,
-      aprobado: estaAprobado
-    }));
+    res.end(JSON.stringify({ promedio: p, aprobado: p >= 3.0 }));
     return;
   }
-
+ 
   res.writeHead(404, { 'Content-Type': 'application/json; charset=utf-8' });
   res.end(JSON.stringify({ error: 'Ruta no encontrada' }));
 });
-
-servidor.listen(80);s
+ 
+s.listen(80);
