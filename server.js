@@ -4,8 +4,11 @@ const NOTA_MINIMA_APROBATORIA = 3.0;
 const calificacionesEstudiante = [4.5, 3.5, 2.5, 4.0];
 
 function calcularPromedioNotas(calificaciones) {
-  const sumaTotal = calificaciones.reduce((acumuladoSuma, notaActual) => acumuladorSuma + notaActual, 0);
-  return sumaTotal / calificaciones.length;
+  let suma = 0;
+  for (let i = 0; i < calificaciones.length; i++) {
+    suma += calificaciones[i];
+  }
+  return suma / calificaciones.length;
 }
 
 function verificarAprobacion(promedio, notaMinima) {
@@ -44,4 +47,4 @@ const servidor = http.createServer((req, res) => {
   res.end(JSON.stringify({ error: 'Ruta no encontrada' }));
 });
 
-servidor.listen(80);
+servidor.listen(80);s
