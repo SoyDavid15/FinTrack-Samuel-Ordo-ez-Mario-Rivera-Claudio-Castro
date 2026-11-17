@@ -1,0 +1,67 @@
+/* front/src/App.css */
+
+.app {
+  max-width: 860px;
+  margin: 0 auto;
+}
+
+/* ── Encabezado ── */
+.encabezado {
+  background: linear-gradient(135deg, #2c3e50 0%, #34495e 100%);
+  color: #fff;
+  padding: 24px 28px;
+  border-radius: 12px;
+  margin-bottom: 24px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.encabezado__titulo {
+  font-size: 26px;
+  font-weight: 700;
+  letter-spacing: -0.5px;
+  margin-bottom: 4px;
+}
+
+.encabezado__subtitulo {
+  font-size: 14px;
+  color: #bdc3c7;
+}
+
+/* ── Tarjetas de resumen ── */
+.resumen {
+  display: flex;
+  gap: 16px;
+  margin-bottom: 24px;
+  flex-wrap: wrap;
+}
+
+/* ── Secciones del cuerpo ── */
+.seccion {
+  margin-bottom: 24px;
+}
+
+/* ── Estado de carga y error global ── */
+.estado-carga {
+  text-align: center;
+  padding: 40px;
+  color: #7f8c8d;
+  font-size: 15px;
+}
+
+.estado-error {
+  background: #fdecea;
+  border-left: 4px solid #e74c3c;
+  padding: 14px 18px;
+  border-radius: 7px;
+  color: #c0392b;
+  margin-bottom: 20px;
+  font-size: 14px;
+}
+
+/* ── Pie de página ── */
+.pie {
+  margin-top: 32px;
+  text-align: center;
+  font-size: 12px;
+  color: #bdc3c7;
+}
