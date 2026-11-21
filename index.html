@@ -37,12 +37,16 @@
 <section class="seccion-principal">
   <h2 class="titulo-resumen">Agregar Movimiento</h2>
   <div class="caja-principal">
-    <form>
-      <input type="text" placeholder="Descripción" required>
-      <input type="number" placeholder="Monto" required>
-      <button type="submit">Agregar</button>
-    </form>
-  </div>
+<form>
+    <input type="text" id="descripcion" placeholder="Descripción" required>
+    <select id="tipo">
+        <option value="ingreso">Ingreso</option>
+        <option value="gasto">Gasto</option>
+    </select>
+    <input type="number" placeholder="Monto" required>
+    <button type="submit">Agregar</button>
+</form>
+    </div>
 </section>
 </body>
 </html>
