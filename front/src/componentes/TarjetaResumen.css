@@ -1,0 +1,49 @@
+/* front/src/componentes/TarjetaResumen.css */
+
+.tarjeta {
+  background: #ffffff;
+  border-radius: 10px;
+  padding: 20px 24px;
+  flex: 1;
+  min-width: 150px;
+  text-align: center;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.09);
+  border-top: 4px solid transparent;
+  transition: transform 0.15s ease;
+}
+
+.tarjeta:hover {
+  transform: translateY(-2px);
+}
+
+.tarjeta--ingreso  { border-top-color: #27ae60; }
+.tarjeta--gasto    { border-top-color: #e74c3c; }
+.tarjeta--saldo    { border-top-color: #2980b9; }
+.tarjeta--deficit  { border-top-color: #e67e22; }
+
+.tarjeta__titulo {
+  font-size: 13px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: #7f8c8d;
+  margin-bottom: 10px;
+}
+
+.tarjeta__valor {
+  font-size: 26px;
+  font-weight: 700;
+}
+
+.tarjeta__valor--ingreso { color: #27ae60; }
+.tarjeta__valor--gasto   { color: #e74c3c; }
+.tarjeta__valor--saldo   { color: #2980b9; }
+.tarjeta__valor--deficit { color: #e67e22; }
+
+.tarjeta__estado {
+  margin-top: 6px;
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  color: #95a5a6;
+}

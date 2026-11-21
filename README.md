@@ -3,6 +3,8 @@ Samuel Ordoñez
 Mario Rivera
 Claudio Castro
 
+## Despliegue en AWS
+| Samuel Ordoñez | http://cuc-bp-eq-01-ordonez-sitio-2026.s3-website-us-east-1.amazonaws.com/ | cuc-bp-eq03-ripoll-sitio-2026 | cuc-bp-eq03-ripoll-privado-2026 | https://cuc-bp-eq01-ordonez-privado-2026.s3.us-east-1.amazonaws.com/index.html |  
 
 
 \# Despliegue en AWS
@@ -25,3 +27,7 @@ Realizamos esta actualización ya que vimos conveniente hacer uso de AWS para la
 
 en la nube.  
 
+## Despliegue en AWS
+| Mario Rivera | http://cuc-bp-eq01-rivera-sitio-2026.s3-website-us-east-1.amazonaws.com
+ | cuc-bp-eq01-rivera-sitio-2026 | cuc-bp-eq01-rivera-privado-2026 |
+|---|---|---|---|

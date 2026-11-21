@@ -1,0 +1,72 @@
+/* front/src/componentes/FormularioMovimiento.css */
+
+.formulario {
+  background: #ffffff;
+  border-radius: 10px;
+  padding: 24px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.09);
+}
+
+.formulario__titulo {
+  font-size: 16px;
+  font-weight: 700;
+  color: #2c3e50;
+  margin-bottom: 16px;
+}
+
+.formulario__campos {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.formulario__input,
+.formulario__select {
+  flex: 1;
+  min-width: 140px;
+  padding: 10px 12px;
+  border: 1.5px solid #dce1e7;
+  border-radius: 7px;
+  font-size: 14px;
+  color: #2c3e50;
+  background: #f9fafb;
+  outline: none;
+  transition: border-color 0.2s;
+}
+
+.formulario__input:focus,
+.formulario__select:focus {
+  border-color: #2980b9;
+  background: #fff;
+}
+
+.formulario__boton {
+  padding: 10px 22px;
+  background: #2980b9;
+  color: #fff;
+  border: none;
+  border-radius: 7px;
+  font-size: 14px;
+  font-weight: 600;
+  transition: background 0.2s;
+  align-self: flex-start;
+}
+
+.formulario__boton:hover {
+  background: #2471a3;
+}
+
+.formulario__boton:disabled {
+  background: #95a5a6;
+  cursor: not-allowed;
+}
+
+.formulario__error {
+  margin-top: 10px;
+  padding: 8px 12px;
+  background: #fdecea;
+  border-left: 4px solid #e74c3c;
+  border-radius: 4px;
+  color: #c0392b;
+  font-size: 13px;
+}

@@ -1,0 +1,24 @@
+/* front/src/index.css */
+/* Estilos globales de FinTrack */
+
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #eef2f5;
+  min-height: 100vh;
+  padding: 24px;
+  color: #2c3e50;
+}
+
+h1, h2, h3 {
+  line-height: 1.3;
+}
+
+button {
+  cursor: pointer;
+}
