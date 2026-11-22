@@ -16,9 +16,14 @@ const FORMATO_MONEDA = new Intl.NumberFormat('es-CO', {
  */
 function ListaMovimientos({ movimientos }) {
   const [filtroTipo, setFiltroTipo] = useState('todos');
+  const [busqueda, setBusqueda] = useState('');
 
 const movimientosFiltrados = movimientos
-  ? movimientos.filter((mov) => (filtroTipo === 'todos' ? true : mov.tipo === filtroTipo))
+  ? movimientos.filter((mov) => {
+      const coincideTipo = filtroTipo === 'todos' ? true : mov.tipo === filtroTipo;
+      const coincideTexto = mov.descripcion.toLowerCase().includes(busqueda.toLowerCase());
+      return coincideTipo && coincideTexto;
+    })
   : [];
   if (!movimientos || movimientos.length === 0) {
     return (
@@ -60,6 +65,13 @@ const movimientosFiltrados = movimientos
   >
     Gastos
   </button>
+  <input
+    type="search"
+    placeholder="Buscar por descripción..."
+    value={busqueda}
+    onChange={(e) => setBusqueda(e.target.value)}
+    className="lista__buscador"
+  />
 </div>
 
       <ul className="lista__ul">
