@@ -14,3 +14,15 @@ Aplicación web full-stack para el control de finanzas personales que permite re
 * **Back-end:** Node.js, Express, CORS.
 * **Testing:** Vitest.
 * **Infraestructura y Control de Versiones:** AWS (S3 y EC2), Git y GitHub (flujo GitFlow con Pull Requests).
+
+## Cómo levantarlo en local
+
+1. Clonar el repositorio:
+   ```bash
+   git clone [https://github.com/SoyDavid15/FinTrack-Samuel-Ordo-ez-Mario-Rivera-Claudio-Castro.git](https://github.com/SoyDavid15/FinTrack-Samuel-Ordo-ez-Mario-Rivera-Claudio-Castro.git)
+   cd FinTrack-Samuel-Ordo-ez-Mario-Rivera-Claudio-Castro
+   
+Método,Ruta,Qué hace,Respuesta
+GET,/movimientos,Lista todos los movimientos financieros registrados,200 Arreglo JSON de movimientos
+GET,/movimientos/resumen,"Calcula total de ingresos, total de gastos, saldo y estado (SALUDABLE / DEFICIT)",200 Objeto JSON con resumen
+POST,/movimientos,"Valida y registra un nuevo ingreso o gasto (requiere descripcion, tipo y monto > 0)",201 Movimiento creado / 400 Error de validación
