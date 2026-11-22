@@ -37,6 +37,31 @@ const movimientosFiltrados = movimientos
           ({movimientosFiltrados.length})
         </span>
       </h2>
+
+      <div className="lista__filtros" role="group" aria-label="Filtrar movimientos por tipo">
+  <button
+    type="button"
+    className={`lista__filtro-btn ${filtroTipo === 'todos' ? 'activo' : ''}`}
+    onClick={() => setFiltroTipo('todos')}
+  >
+    Todos
+  </button>
+  <button
+    type="button"
+    className={`lista__filtro-btn ${filtroTipo === 'ingreso' ? 'activo' : ''}`}
+    onClick={() => setFiltroTipo('ingreso')}
+  >
+    Ingresos
+  </button>
+  <button
+    type="button"
+    className={`lista__filtro-btn ${filtroTipo === 'gasto' ? 'activo' : ''}`}
+    onClick={() => setFiltroTipo('gasto')}
+  >
+    Gastos
+  </button>
+</div>
+
       <ul className="lista__ul">
         {/* key={mov.id}: identificador único del servidor, nunca el índice del array */}
         {movimientosFiltrados.map((mov) => (
