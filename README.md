@@ -46,3 +46,19 @@ GET,/movimientos,Lista todos los movimientos financieros registrados,200 Arreglo
 GET,/movimientos/resumen,"Calcula total de ingresos, total de gastos, saldo y estado (SALUDABLE / DEFICIT)",200 Objeto JSON con resumen
 POST,/movimientos,"Valida y registra un nuevo ingreso o gasto (requiere descripcion, tipo y monto > 0)",201 Movimiento creado / 400 Error de validación
 
+## Despliegue
+
+* **Front-end (AWS S3 Static Website Hosting):**
+  * URL pública: `[http://cuc-bp-equiposcm-sitio-2026.s3-website-us-east-1.amazonaws.com](http://cuc-bp-equiposcm-sitio-2026.s3-website-us-east-1.amazonaws.com)`
+  * Bucket S3: `cuc-bp-equiposcm-sitio-2026`
+* **Back-end (AWS EC2):**
+  * IP pública de la instancia: `54.90.106.180` (API en puerto `3000`: `[http://54.90.106.180:3000](http://54.90.106.180:3000)`)
+* **Pasos para volver a desplegar:**
+  1. En `api/`: configurar `.env` con `CORS_ORIGIN=[http://cuc-bp-equiposcm-sitio-2026.s3-website-us-east-1.amazonaws.com](http://cuc-bp-equiposcm-sitio-2026.s3-website-us-east-1.amazonaws.com)` y ejecutar el servidor en la instancia EC2 (`54.90.106.180`).
+  2. En `front/`: actualizar `VITE_API_URL=[http://54.90.106.180:3000](http://54.90.106.180:3000)` en `.env.production`, ejecutar `npm run build` y subir el contenido de `front/dist/` al bucket S3 `cuc-bp-equiposcm-sitio-2026`.
+
+## Auditoría de Seguridad (`npm audit`)
+
+Se ejecutó `npm audit` tanto en `api/` como en `front/` antes de la entrega final, verificando el árbol de dependencias sin vulnerabilidades críticas en producción que afecten la ejecución del servidor o del cliente.
+
+
